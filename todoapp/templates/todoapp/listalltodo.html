@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<div class="container" style="background-color:lavender">
+    <div class="row">
+        <h1 class="center">List all Todos</h1>
+        <hr>
+        {%for todos in todo%}
+        <div class="col-4">
+            <div class="card" style="width: 22rem;border: 2px solid black;color: white;background-color:grey">
+              <div class="btn btn-light">
+                <h5 class="card-title">{{todos.task_name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{todos.status}}</h6>
+                <p class="card-text">{{todos.user}}</p>
+                <a href="{%url 'update' todos.id %}" class="btn btn-outline-warning">Update</a>
+                <a href="{%url 'delete' todos.id %}" class="btn btn-outline-danger">Delete</a>
+              </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>

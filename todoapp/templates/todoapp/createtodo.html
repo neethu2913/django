@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{%extends 'todoapp/home.html'%}
+
+
+{%block body_block%}
+<div class="container" style="background-color:lavender;">
+    <div class="row">
+        <div class="col-4"></div>
+         <div class="card" style="width: 22rem;border: 3px solid black;color: black;background-color:white;">
+            <h1>Create Todo</h1>
+            <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit"  class="btn btn-primary" value="create">
+            </form>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+{%endblock%}
